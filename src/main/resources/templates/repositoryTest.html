@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<h1>I am CRUD machine</h1>
+	<form method="post" action="/repository" th:object="${formModel}">
+		<input type="text" name="id" placeholder="id" th:value="*{id}"/>
+		<input type="text" name="name" placeholder="name" th:value="*{name}"/>
+		<input type="text" name="memo" placeholder="memo" th:value="*{memo}"/>
+		<input type="submit"/>
+	</form>
+	<pre th:each="obj : ${data}">
+		<p th:text="|id : ${obj.id}, name: ${obj.name} memo:${obj.memo}|"></p>
+	</pre>
+</body>
+</html>
